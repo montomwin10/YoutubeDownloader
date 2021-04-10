@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Xaml.Behaviors;
-using YoutubeExplode.Videos;
+using YoutubeDownloader.Models;
 
 namespace YoutubeDownloader.Behaviors
 {
@@ -59,7 +59,7 @@ namespace YoutubeDownloader.Behaviors
             if (_viewHandled) return;
             if (AssociatedObject.Items.SourceCollection is null) return;
 
-            SelectedItems = AssociatedObject.SelectedItems.Cast<Video>().ToArray();
+            SelectedItems = AssociatedObject.SelectedItems.Cast<VideoInformation>().ToArray();
         }
 
         // Re-select items when the set of items changes
